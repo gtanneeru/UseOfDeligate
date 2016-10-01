@@ -18,17 +18,18 @@ namespace UseOfDeligate
             employee.Add(new Employee() { ID = 104, name = "Mark", experience = 4, salary = 5000 });
 
 
-             isPromoted isPromotable = new isPromoted(promote);
-             emp.getPromoted(employee,isPromotable);
+           // isPromoted isPromotable = new isPromoted(promote);
+           // emp.getPromoted(employee,isPromotable);
             // Instead of creating a bool function and an instance, we can use lambda expression, mainly used for deligates and linq coding.
 
-           // emp.getPromoted(employee, emplo => emp.experience >= 5);
+            emp.getPromoted(employee, empl => empl.experience >= 5);
 
             Console.ReadKey();
         }
 
-        public static bool promote(Employee empl)
-        {
+       
+         public static bool promote(Employee empl)
+         {
             return (empl.experience >= 5) ? true : false;
         }
     }
